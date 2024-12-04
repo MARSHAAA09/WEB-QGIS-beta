@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif; 
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+   position: absolute; 
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 24px;
+    border-radius: 30px;
+     z-index: 10; 
+    transition: all 0.3s;
+    
+    
+}
+
+.sidebar .head {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f8ff;
+}
+
+.user-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.menu .title {
+    font-size: 10px;
+    font-weight: 500;
+    color:blue;
+    text-transform:uppercase;
+    margin-bottom: 10px;
+}
+
+.user-details .name{
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.user-details .title {
+    font-size: 12px;
+    color: gray;
+    font-style: italic;
+}
+.nav{
+    flex: 1;
+}
+.menu ul li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 4px;
+    
+}
+.menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500px;
+    color: #7fffd4;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all o.3s;
+    
+
+}
+.menu ul li > a:hover,
+   .menu ul li.active a {
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+}
+.menu ul li .icon {
+    font-size: 20px;
+}
+.menu ul li .text {
+    flex: 1;
+}
+.menu ul li .arrow {
+    font-size: 14px;
+    transition: all 0.3s;
+}
+.menu ul li.active .arrow{
+    transform: rotate(180);
+}
+.menu .sub-menu {
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid #d8edf0;
+}
+.menu .sub-menu  li a{
+    padding: 10px 8px;
+    font-size: 12px;
+    text-decoration: none;
+
+}
+.menu-btn{
+    position: absolute;
+    right: -2px;
+    top: 3.5%;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aquamarine;
+    background-color: #fff;
+    border: 2px solid #d8edf0;
+    cursor: pointer;
+}
+.menu-btn:hover i {
+    color: #000;
+}
+.menu-btn i {
+    transition: all 0.3s;
+}
+.sidebar.active{
+    width: 92px;
+}
+.sidebar.active .menu-btn {
+    transform: rotate(180deg);
+}
+.sidebar.active .user-details {
+    display: none;
+}
+.sidebar.active .menu .title {
+    text-align: center;
+}
+.sidebar.active .menu ul li .arrow {
+    display: none;
+}
+.sidebar.active .menu > ul > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar.active .menu > ul > li > a .text {
+ position: absolute;
+ left : 70px;
+ top: 50%;
+ transform: translateY(-50%);
+ padding: 10px;
+ border-radius: 4px;
+ color: #fff;
+ background-color: #7fffd4;
+ opacity: 0;
+visibility: hidden;
+transition: all 0.3s;
+}
+.sidebar.active .menu >ul >li > a .text::after{
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: aquamarine;
+    transition: rotate(45deg);
+    z-index: -1;
+}
+.sidebar.active .menu >ul >li > a:hover .text {
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+.sidebar.active .menu .sub-menu{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid #d8edf0;
+    background-color: fff;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.40),rgba(0,0,0,0.40));
+    background-position: center;
+    background-size: center;
+}
+.navbar{
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 160px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #7fffd4;
+    font-weight: 600;
+    padding: 15px;
+}
+li a:hover{
+    background: white;
+    transition: 0.6s;
+}
+.navbar a:hover{
+    color: black;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    color: white;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.content h1{
+    margin-top: 80px;
+    font-size: 90px;
+    font-weight: 800;
+}
+button{
+    width: 200px;
+    padding: 15px;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius: 25px;
+    color: black;
+    border: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+button:hover{
+    background: #7fffd4;
+    transition: 0.5s;
+}
+button:hover{
+    color: white;
+}
+.banner video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media(min-aspect-ratio: 16/9){
+    .banner video{
+        width: 100%;
+        height: auto;
+    }
+}
+/* Loader di atas teks */
+.loader {
+    position: absolute;
+    top: 20%; /* Posisikan loader di atas teks */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Tidak tampil secara default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Pastikan loader berada di atas elemen lainnya */
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animasi spinning */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pastikan teks berada di belakang loader */
+.content h1, .content h2, .content button {
+    position: relative;
+    z-index: 5;
+}
+
+/* Background Modal */
+/* Gaya dasar modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+ 
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal muncul */
+.modal {
+    display: none; /* Secara default modal disembunyikan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     /* Latar belakang dengan transparansi */
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out; /* Transisi opacity */
+    opacity: 0; /* Modal dimulai dengan opacity 0 */
+}
+
+/* Modal content */
+.modal-content {
+    position: relative;
+    top: 30%;
+    left: 30%;
+    
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 600px;
+}
+
+/* Tampilan Modal ketika ditampilkan */
+.modal.show {
+    display: block; /* Menampilkan modal */
+    opacity: 1; /* Modal menjadi terlihat dengan opacity penuh */
+}
+
+/* Tombol Close */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efek saat hover pada tombol close */
+.close:hover {
+    color: black;
+    transform: scale(1.2);
+}
+
+
+/* Menambahkan animasi keluar untuk modal */
+.modal.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* keterangan */
+

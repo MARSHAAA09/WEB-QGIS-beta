@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QWEB ID</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function navigateToMap() {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'flex'; // Tampilkan loader
+            setTimeout(() => {
+                window.location.href = './map.html';
+            }, 1500); // Durasi animasi
+        }
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <video autoplay loop muted playsinline>
+            <source src="./asset/vidio1.mp4" type="video/mp4" />
+        </video>
+        <div class="navbar">
+            <img class="logo" src="./asset/Lgowb.png" />
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#" onclick="navigateToMap()">Data Map</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <!-- Loader -->
+            <div class="loader" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+            <!-- Teks Utama -->
+            <h1>EXPLORE THE WORLD</h1>
+            <h2>Dari data ke peta: Semua dalam satu platform SIG</h2>
+            <div>
+                <button type="button" onclick="navigateToMap()">Explore</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
